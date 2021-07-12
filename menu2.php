@@ -228,8 +228,8 @@ while($row = mysqli_fetch_array($result))
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="provider-subscription.html" class="nav-link">
-                                    <i class="far fa-calendar-alt"></i> <span>Subscription</span>
+                                <a href="myinvoice.php" class="nav-link">
+                                    <i class="far fa-calendar-alt"></i> <span>Invoice</span>
                                 </a>
                             </li>
                             <li class="nav-item">

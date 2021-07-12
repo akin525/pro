@@ -65,7 +65,7 @@ if($product_type=="data"){
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://api.5starcompany.com.ng/mcd_reseller_v2.php',
+        CURLOPT_URL => 'https://api.5starcompany.com.ng/mcd_reseller_test.php',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -91,9 +91,9 @@ if($product_type=="data"){
         $query = mysqli_query($con, "insert into bill_payment (product, username, amount, transactionid, paymentmethod,status) values ('$title', '$payer', '$topay', '$tran', 'Wallet Payment', '$success')");
         echo "<script language='javascript'> window.location='myinvoice.php';</script>";
     }
-    if($success==0){
+//    if($success==0){
         echo "<script language='javascript'> window.location='mcderror.php';</script>";
-    }
+//    }
 }
 
 elseif ($product_type=="airtime") {
@@ -101,7 +101,7 @@ elseif ($product_type=="airtime") {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://api.5starcompany.com.ng/mcd_reseller_v2.php',
+        CURLOPT_URL => 'https://api.5starcompany.com.ng/mcd_reseller_test.php',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
