@@ -1,5 +1,5 @@
 <?php include ("menu2.php");?>
-<?php //include ("include/session.php"); ?>
+
 
 <div class="col-xl-9 col-md-8">
     <div class="tab-content pt-0">
@@ -10,6 +10,10 @@
 
 
                         <?php
+                        require("coinassets/config.php");
+                        require("classes/block_io.php");
+                        require("classes/gateway.php");
+
                         $query="SELECT * FROM  users where username = '".$loggedin_session."'";
                         $result = mysqli_query($con,$query);
 
@@ -320,12 +324,8 @@
                                     <!-- End All Contact List -->
 
                                 <?php } ?>
-                            </div>
-                        </div>
 
                             </div>
-                        </div>
-
                             <?php
                             $scode=rand(1111111111,9999999999); //generating random code, this will act as ticket id
 
@@ -458,14 +458,3 @@
                                 }
                             </script>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
-
-<?php include ("footer.php"); ?>

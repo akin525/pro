@@ -212,6 +212,8 @@ include ("include/database.php");
             //printing error if found in validation
             print "
 				<script language='javascript'>
+				let message = 'Account Registration successful : A mail has been sent to $email containing your login details for record purpose. Check your spam folder if message is not found in your inbox. ';
+                                    alert(message);
 window.location = 'dashboard.php';
 </script>
 ";
@@ -273,21 +275,21 @@ window.location = 'dashboard.php';
                             <label class="focus-label">Create Password</label>
                             <input type="password" name="password" class="form-control" placeholder="********" required>
                         </div>
-                        <div class="text-right">
-                            <a class="forgot-link" href="#">Already have an account?</a>
-                        </div>
+<!--                        <div class="text-right">-->
+<!--                            <a class="forgot-link" href="#">Already have an account?</a>-->
+<!--                        </div>-->
                         <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Signup</button>
                         <div class="login-or">
                             <span class="or-line"></span>
                             <span class="span-or">or</span>
                         </div>
                         <div class="row form-row social-login">
-                            <div class="col-6">
-                                <a href="#" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i> Login</a>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a>
-                            </div>
+<!--                            <div class="col-6">-->
+<!--                                <a href="#" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i> Login</a>-->
+<!--                            </div>-->
+<!--                            <div class="col-6">-->
+<!--                                <a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a>-->
+<!--                            </div>-->
                         </div>
                     </form>
                     <!-- /Register Form -->
@@ -348,6 +350,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['login_user']=$email;
             print "
                     <script language='javascript'>
+                    let message = 'Login Successful';
+                                    alert(message);
                         window.location = 'dashboard.php';
                     </script>
                     ";
@@ -402,8 +406,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div class="col-6">	<a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a>
                             </div>
                         </div>
-                        <div class="text-center dont-have">Don’t have an account? <a href="#">Register</a>
-                        </div>
+<!--                        <div class="text-center dont-have">Don’t have an account? <a href="#">Register</a>-->
+<!--                        </div>-->
                     </form>
                 </div>
             </div>
