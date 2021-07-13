@@ -10,6 +10,9 @@ $row=mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 while($row = mysqli_fetch_array($result))
 {
     $balance=$row["balance"];
+    $account_name=$row["account_name"];
+    $account_no=$row["account_no"];
+
 }
 $iwallet=0;
 $fwallet=0;
@@ -145,7 +148,7 @@ while($row = mysqli_fetch_array($result))
 
             <ul class="nav header-navbar-rht">
                 <li class="nav-item desc-list wallet-menu">
-                    <a href="user-wallet.html" class="nav-link header-login">
+                    <a href="wallet.php" class="nav-link header-login">
                         <img src="assets/img/wallet.png" alt="" class="mr-2 wallet-img"><span>Wallet:</span>NGN <?php echo number_format(intval($balance *1),2);?>
                     </a>
                 </li>

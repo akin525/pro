@@ -49,26 +49,24 @@
                         <input type="hidden"  id="email-address" value="<?php echo $email; ?>">
                 </div>
                         </div>
+                                <div class="text-center mb-3">
+                        <h5 class="mb-3">OR</h5>
+                        <ul class="list-inline mb-0">
+                            <li class="line-inline-item mb-0 d-inline-block">
+                                <a href="javascript:;" name="amount" class="updatebtn">500</a>
+                            </li>
+                            <li class="line-inline-item mb-0 d-inline-block">
+                                <a href="javascript:;" id="1000" class="updatebtn">1000</a>
+                            </li>
+                            <li class="line-inline-item mb-0 d-inline-block">
+                                <a href="javascript:;" id="1500" class="updatebtn">1500</a>
+                            </li>
+                        </ul>
+                    </div>
             <button class="btn btn-primary btn-block withdraw-btn" type="submit" onclick="payWithPaystack()"> Add to Wallet</button>
-
-            </form>
             <script src="https://js.paystack.co/v1/inline.js"></script>
-
-            <!--                    <div class="text-center mb-3">-->
-<!--                        <h5 class="mb-3">OR</h5>-->
-<!--                        <ul class="list-inline mb-0">-->
-<!--                            <li class="line-inline-item mb-0 d-inline-block">-->
-<!--                                <a href="javascript:;" class="updatebtn">$50</a>-->
-<!--                            </li>-->
-<!--                            <li class="line-inline-item mb-0 d-inline-block">-->
-<!--                                <a href="javascript:;" data-amount="100" class="updatebtn">$100</a>-->
-<!--                            </li>-->
-<!--                            <li class="line-inline-item mb-0 d-inline-block">-->
-<!--                                <a href="javascript:;" data-amount="150" class="updatebtn">$150</a>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-                </div>
+            </form>
+        </div>
             </div>
         </div>
     </div>

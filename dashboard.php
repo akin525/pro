@@ -4,28 +4,50 @@
     <h4 class="widget-title">Dashboard</h4>
     <div class="row">
         <div class="col-lg-4">
-            <a href="provider-bookings.html" class="dash-widget dash-bg-1">
-                <span class="dash-widget-icon">245</span>
+            <a href="wallet.php" class="dash-widget dash-bg-1">
+                <img src="assets/img/wallet.png" alt="" class="mr-2 wallet-img">NGN <?php echo number_format(intval($balance *1),2);?>
+
                 <div class="dash-widget-info">
-                    <span>Bookings</span>
+                    <span>Balance</span>
+                </div>
+            </a>
+        </div>
+        <?php
+        $query="SELECT  sum(amount) FROM bill_payment where username = '".$loggedin_session."'";
+        $result = mysqli_query($con,$query);
+        while($row = mysqli_fetch_array($result))
+        {
+            $sp=$row[0];
+
+
+        }
+        ?>
+        <div class="col-lg-4">
+            <a href="myinvoice.php" class="dash-widget dash-bg-2">
+            <img src="assets/img/wallet.png" alt="" class="mr-2 wallet-img">NGN <?php echo number_format(intval($sp *1),2);?>
+
+                <div class="dash-widget-info">
+                    <span>Total Bills</span>
                 </div>
             </a>
         </div>
         <div class="col-lg-4">
-            <a href="my-services.html" class="dash-widget dash-bg-2">
-                <span class="dash-widget-icon">66</span>
+            <div class="dash-widget dash-bg-3">
+                <?php
+                if ($account_no==1 && $account_name==1) {
+                    echo " <div> <a href=virtual.php>create Virtual account </a></div>";
+                }
+                else {
+                    echo "<div> <a> Bank Name:".$account_name."  
+Account No:".$account_no."
+</a></div>";
+//                    echo "<span>Account No:".$account_no."</span>";
+                }
+                ?>
                 <div class="dash-widget-info">
-                    <span>Services</span>
+                    <span></span>
                 </div>
-            </a>
-        </div>
-        <div class="col-lg-4">
-            <a href="notifications.html" class="dash-widget dash-bg-3">
-                <span class="dash-widget-icon">8</span>
-                <div class="dash-widget-info">
-                    <span>Notification</span>
-                </div>
-            </a>
+            </div>
         </div>
     </div>
                 <div class="card mb-0">
