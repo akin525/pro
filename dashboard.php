@@ -56,28 +56,51 @@ Account No:".$account_no."
                             <div class="card-body">
                                 <h6 class="title">Plan Details</h6>
                                 <div class="sp-plan-name">
-                                    <h6 class="title">
-                                        Gold <span class="badge badge-success badge-pill">Active</span>
-                                    </h6>
-                                    <p>Subscription ID: <span class="text-base">100394949</span></p>
+
+                                    <?php
+                                    $status=0;
+                                    $query="SELECT * FROM safe_lock where username = '".$loggedin_session."'";
+                                    $result = mysqli_query($con,$query);
+                                    while($row = mysqli_fetch_array($result)) {
+                                        $status = $row["status"];
+                                        $da = $row["date"];
+                                    }
+
+                                    if ($status == 0){ ?>
+                                        <button type="submit" class="btn btn-outline-primary btn-rounded"><a href="safelock.php">Depsoit to Lock wallet</a></button>
+                                    <?php }else{ ?>
+                                        <button type="submit" class="btn btn-outline-primary btn-rounded"><a href="add.php">Add to Lock wallet</a></button>
+                                    <?php } ?>
+                                    <button type="submit" class="btn btn-outline-primary btn-rounded"><a href="logout.php">Logout Here</a></button>
                                 </div>
                                 <ul class="row">
                                     <li class="col-6 col-lg-6">
-                                        <p>Started On 15 Jul, 2020</p>
+
+                                    <?php
+                                    $query="SELECT * FROM  userbvn WHERE username='".$loggedin_session."'";
+                                    $result = mysqli_query($con,$query);
+                                    $bvn=0;
+                                    $row=mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+                                    while($row = mysqli_fetch_array($result))
+                                    {
+                                        $bvn=$row["bvn"];
+                                    }
+                                    if ($bvn==0){ ?>
+                                        <button type="submit" class="btn btn-outline-primary btn-rounded"><a href="profilebvn.php">Submit Your Bvn</a></button>
+                                    <?php } else{ ?>
+                                        <button type="submit" class="btn btn-outline-primary btn-rounded">Bvn: <?php echo $bvn; ?></button>
+                                    <?php } ?>
+<!--                                        <p>Started On 15 Jul, 2020</p>-->
                                     </li>
-                                    <li class="col-6 col-lg-6">
-                                        <p>Price $1502.00</p>
-                                    </li>
+<!--                                    <li class="col-6 col-lg-6">-->
+<!--                                        <p>Price $1502.00</p>-->
+<!--                                    </li>-->
                                 </ul>
                                 <h6 class="title">Last Payment</h6>
                                 <ul class="row">
                                     <li class="col-sm-6">
-                                        <p>Paid at 15 Jul 2020</p>
-                                    </li>
-                                    <li class="col-sm-6">
-                                        <p><span class="text-success">Paid</span>  <span class="amount">$1502.00</span>
-                                        </p>
-                                    </li>
+                                        <button type="submit" class="btn btn-outline-primary btn-rounded"><a href="paymethod.php">Create Payment Method</a></button>
+
                                 </ul>
                             </div>
                         </div>
